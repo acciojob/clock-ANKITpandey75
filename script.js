@@ -1,16 +1,9 @@
-function updateTimer() {
-    var now = new Date();
+const timer = document.getElementById("timer");
 
-    document.getElementById("timer").textContent = now.toLocaleString("en-IN", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-        hour: "numeric",
-        minute: "2-digit",
-        second: "2-digit",
-        hour12: true
-    });
+function displayTime() {
+    timer.textContent = new Date().toString();
 }
 
-updateTimer();
-setInterval(updateTimer, 1000);
+displayTime();
+
+setInterval(displayTime, 1000);
